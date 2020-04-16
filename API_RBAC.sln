@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_RBAC", "API_RBAC\API_RBAC.csproj", "{2CF61AD7-D160-41D2-859B-08C385602446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientMVC", "ClientMVC\ClientMVC.csproj", "{5B652718-69B0-4E44-A42C-6ED87CC34FCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CF61AD7-D160-41D2-859B-08C385602446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF61AD7-D160-41D2-859B-08C385602446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF61AD7-D160-41D2-859B-08C385602446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF61AD7-D160-41D2-859B-08C385602446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B652718-69B0-4E44-A42C-6ED87CC34FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B652718-69B0-4E44-A42C-6ED87CC34FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B652718-69B0-4E44-A42C-6ED87CC34FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B652718-69B0-4E44-A42C-6ED87CC34FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECBD60A0-7068-48F3-B103-13681EB1EE97}
+	EndGlobalSection
+EndGlobal

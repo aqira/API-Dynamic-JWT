@@ -1,0 +1,60 @@
+﻿@using System.IdentityModel.Tokens.Jwt;
+
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Admin">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">RBAC JWT</div>
+    </a>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item">
+        <hr class="sidebar-divider">
+        @{
+            string role = null;
+            if (Session["Token"] == null)
+            {
+            <li></li>
+        }
+        else
+        {
+            string token = Session["Token"].ToString();
+            if (token != null)
+            {
+                role = new JwtSecurityTokenHandler().ReadJwtToken(token).Claims.Where(p => p.Type == "Role").FirstOrDefault()?.Value;
+            }
+            if (role.Equals("Manager"))
+            {
+                <li class="nav-item active">
+                    <a class="nav-link" href="Role">
+                        <i class="fas fa-fw fa-atlas"></i>
+                        <span>Role</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="UserRole">
+                        <i class="fas fa-fw fa-sticky-note"></i>
+                        <span>User and Roles</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item active">
+                    <a class="nav-link" href="/User">
+                        <i class="fas fa-fw fa-person-booth"></i>
+                        <span>User</span>
+                    </a>
+                </li>
+            }
+        }
+
+
+        }
+
+
+        <hr class="sidebar-divider d-none d-md-block">
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+    </ul>
