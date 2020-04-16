@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Claims;
 using System.Text;
 using System.Web;
@@ -13,10 +14,16 @@ using System.Web.Http;
 
 namespace API_RBAC.Controllers
 {
-
+    [Authorize]
     public class AccountController : ApiController
     {
         MyContext db = new MyContext();
+
+        readonly HttpClient client = new HttpClient();
+        public AccountController()
+        {
+            client.DefaultRequestHeaders.Add("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NDYxYjM0NC05OWY4LTQ4YzgtYThlZS04YmVlZjlkZjFiNTIiLCJJZCI6IjEiLCJOYW1lIjoiYXFpcmFAZ21haWwuY29tIiwiRW1haWwiOiJhcWlyYUBnbWFpbC5jb20iLCJSb2xlIjoiTWFuYWdlciIsImV4cCI6MTYxODU1OTI1MiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDY5My8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUyMDQ5LyJ9.K-Hk-zUOOuAc3_mRpY7WNuPp19djWFVyqe77ioe8aLU");
+        }
 
         [Route("GenerateToken")]
         [HttpPost]

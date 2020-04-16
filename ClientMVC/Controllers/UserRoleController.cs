@@ -13,7 +13,6 @@ namespace ClientMVC.Controllers
 {
     public class UserRoleController : Controller
     {
-
         // GET: UserRole
         public ActionResult Index()
         {
